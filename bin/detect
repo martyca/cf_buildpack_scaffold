@@ -1,0 +1,2 @@
+#!/bin/bash
+echo I am the detect script, i will run first.
