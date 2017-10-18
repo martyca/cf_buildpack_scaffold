@@ -19,7 +19,7 @@ buildpack=$(cd "$(dirname $0)/.." && pwd)
 mkdir -p $build/.deps
 mkdir -p $build/.profile.d
 mkdir -p $build/.lib
-echo 'export PATH=$PATH:$HOME/.deps:$HOME/.lib:$HOME/.lib/jli:$HOME/.lib/security:$HOME/.lib/server' > $build/.profile.d/java.sh
-
+echo 'export PATH=$PATH:$HOME/.deps:$HOME/.lib' > $build/.profile.d/java.sh
+echo 'export LD_LIBRARY_PATH=$HOME/.lib' >> $build/.profile.d/java.sh
 cp $buildpack/src/* $build/.deps/
 cp -r $buildpack/lib/* $build/.lib/
